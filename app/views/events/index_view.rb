@@ -12,6 +12,9 @@ class Events::IndexView < Phlex::HTML
           plain " in #{event.location}:"
           plain number_to_currency(event.price, :precision => 0)
         end
+        p do
+          
+        end
       end
     end
   end
