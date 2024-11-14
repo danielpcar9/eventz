@@ -10,10 +10,13 @@ class Events::IndexView < Phlex::HTML
         li do
           strong { event.name }
           plain " in #{event.location}:"
-          plain number_to_currency(event.price, :precision => 0)
+          plain number_to_currency(event.price, precision: 0)
         end
-        p do
-          
+        div do
+           plain event.description 
+        end
+        div do
+          plain event.starts_at.to_s
         end
       end
     end
