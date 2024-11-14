@@ -4,19 +4,23 @@ class Events::IndexView < Phlex::HTML
     @events = events
   end
 
-  def view_template
-    ul class: "list-disc pl-5" do
+  def template
+    ul class: "list-disc pl-5 space-y-8" do
       @events.each do |event|
-        li do
-          strong { event.name }
-          plain " in #{event.location}:"
-          plain number_to_currency(event.price, precision: 0)
-        end
-        div do
-           plain event.description 
-        end
-        div do
-          plain event.starts_at.to_s
+        li class: "mb-6" do
+          div class: "mb-2" do
+            strong { event.name }
+            plain " in #{event.location}:"
+            plain price(event)
+          end
+          
+          div class: "mb-2" do
+            plain event.description 
+          end
+
+          div do
+            plain event.starts_at.strftime("%B %d at %I:%M %P").to_s
+          end
         end
       end
     end
