@@ -19,7 +19,7 @@ class Events::IndexView < Phlex::HTML
           end
 
           div do
-            plain event.starts_at.strftime("%B %d at %I:%M %P").to_s
+            day_and_time(event)
           end
         end
       end
