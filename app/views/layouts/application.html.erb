@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="emerald">
   <head>
     <title><%= content_for(:title) || "Eventz" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -7,20 +7,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= yield :head %>
-
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="min-h-screen flex flex-col bg-base-100">
+    <header class="navbar bg-primary text-primary-content shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex-1">
+          <%= image_tag "ticket.png"%>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+    
       <%= yield %>
-    </main>
+    </div>
+   
   </body>
 </html>

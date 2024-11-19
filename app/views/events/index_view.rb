@@ -1,26 +1,24 @@
 class Events::IndexView < Phlex::HTML
-  include EventsHelper
-  def initialize(events:)
+  def initialize(events:, helpers:)
     @events = events
+    @helpers = helpers
   end
 
-  def template
-    ul class: "list-disc pl-5 space-y-8" do
-      @events.each do |event|
-        li class: "mb-6" do
-          div class: "mb-2" do
-            strong { event.name }
-            plain " in #{event.location}:"
-            plain price(event)
-          end
-          
-          div class: "mb-2" do
-            plain event.description 
-          end
+  def view_template
+    @events.each do |event|
+      section do
+        div do
+          strong { event.name }
+          plain " in #{event.location}:"
+          plain @helpers.price(event)
+        end
 
-          div do
-            day_and_time(event)
-          end
+        div class: "mb-2" do
+          plain event.description
+        end
+
+        div do
+          plain @helpers.day_and_time(event)
         end
       end
     end

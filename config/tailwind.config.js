@@ -2,11 +2,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    './public/*.html',
-    './app/helpers/**/*.rb',
-    './app/javascript/**/*.js',
-    './app/components/**/*.rb',
-    './app/views/**/*.rb'
+    './public/.html',
+    './app/helpers/**/.rb',
+    './app/javascript//*.js',
+    './app/components//.rb',
+    './app/views/**/.rb'
   ],
   theme: {
     extend: {
@@ -23,11 +23,12 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      "luxury",    // tema por defecto (el primero de la lista)
+      "emerald",
+      "cmyk",
+      "luxury",    
       "autumn",
       "night",
       "dark",
-      "cmyk",
       "retro",
       "aqua",
       "dracula",
