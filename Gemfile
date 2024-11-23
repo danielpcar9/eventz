@@ -59,3 +59,5 @@ end
 gem "tailwindcss-rails", "~> 3.0"
 
 gem "phlex-rails", "~> 1.2"
+
+gem "inline_svg"

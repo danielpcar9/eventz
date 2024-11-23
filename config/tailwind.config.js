@@ -1,38 +1,38 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    './public/.html',
-    './app/helpers/**/.rb',
-    './app/javascript//*.js',
-    './app/components//.rb',
-    './app/views/**/.rb'
+    "./public/**/*.html", 
+    "./app/helpers/**/*.rb", 
+    "./app/javascript/**/*.js", 
+    "./app/components/**/*.rb", 
+    "./app/views/**/*.{html,erb,rb}"
   ],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-    require('daisyui')
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+    require("daisyui"),
   ],
   daisyui: {
     themes: [
-      "emerald",
+      "emerald", 
       "cmyk",
-      "luxury",    
+      "luxury",
       "autumn",
       "night",
       "dark",
       "retro",
       "aqua",
       "dracula",
-      "dim"
-    ], 
+      "dim",
+    ],
   },
-}
+};
