@@ -1,7 +1,7 @@
 class ApplicationLayout < Phlex::HTML
   include Phlex::Rails::Layout
   
-  def initialize(page_title: "Eventz", helpers:)
+  def initialize(page_title: "Eventz", helpers: nil)
     @page_title = page_title
   end
 
@@ -36,7 +36,7 @@ class ApplicationLayout < Phlex::HTML
             div class: "flex-1" do
               div class: "flex items-center space-x-2" do
                
-                inline_svg("logo.svg", class: "w-10 h-10", title: "Eventz Logo", aria: { label: "Eventz Logo" })
+                helpers.inline_svg("logo.svg", class: "w-10 h-10", title: "Eventz Logo", aria: { label: "Eventz Logo" })
                 span(class: "text-xl font-bold text-primary-content") { "Eventz" }
               end
             end
@@ -56,11 +56,5 @@ class ApplicationLayout < Phlex::HTML
 
   private
 
-  def csrf_meta_tags
-    csrf_meta_tags
-  end
 
-  def csp_meta_tag
-    csp_meta_tag
-  end
 end

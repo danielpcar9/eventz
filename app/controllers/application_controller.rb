@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-  layout ApplicationLayout
+  layout -> { ApplicationLayout }
   helper :all
   allow_browser versions: :modern
 end
+
+
